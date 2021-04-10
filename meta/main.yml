@@ -11,3 +11,6 @@ galaxy_info:
         - focal
   role_name: rdiff_backup
   galaxy_tags: []
+  
+dependencies:
+  - role: ome.logrotate
