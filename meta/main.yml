@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: stephenogg
+  description: rdiff-backup
+  company:
+  license:
+  min_ansible_version:
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+  role_name: rdiff_backup
+  galaxy_tags: []
