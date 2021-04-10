@@ -1,6 +1,6 @@
 ---
 # tasks file for rdiff-backup
-
+# Installs rdiff-bakcup, librsync2 and dependencies
 - name: rdiff-backup | install rdiff-backup
   become: true
   apt:
@@ -8,17 +8,9 @@
     name: rdiff-backup
     state: present
 
-- name: rdiff-backup | create log directory
-  become: true
-  file:
-    path: /var/log/rdiff-backup-data
-    state: directory
-    mode: 0755
-
-- name: rdiff-backup | configure logrotate
+- name: rdiff-backup | create cron job
   become: true
   template:
-    backup: false
-    dest: /etc/logrotate.d/rsyncd
-    src: logrotated-rsyncd.j2
-    mode: 0644
+    src: etc-crond-rdiff-backup.j2
+    dest: /etc/cron.{{ rdiff_backup_frequency }}/rdiff-backup
+    mode: 0755
