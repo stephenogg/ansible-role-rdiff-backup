@@ -1,0 +1,5 @@
+---
+# defaults file for rdiff-backup
+
+rdiff_backup_logrotate_interval: weekly
+rdiff_backup_logrotate_backlog_size: 52
