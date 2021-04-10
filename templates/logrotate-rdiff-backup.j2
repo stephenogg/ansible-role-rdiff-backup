@@ -1,0 +1,12 @@
+
+# {{ ansible_managed }}
+
+/var/log/rdiff-backup-data/*.log {
+    {{ rdiff_backup_logrotate_interval }}
+    missingok
+    rotate {{ rdiff_backup_logrotate_backlog_size }}
+    compress
+    #delaycompress
+    notifempty
+    nocreate
+}
